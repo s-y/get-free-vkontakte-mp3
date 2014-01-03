@@ -5,6 +5,9 @@ Get Free VK mp3!
 
     $ pip install vkontakte
 
+Если вы под Windows то надо скачать https://bitbucket.org/kmike/vkontakte/get/default.zip 
+и положить папку vkontakte позле script.py. 
+
 Так как надо получить access token идем на специально подготовленную страницу :  
 https://oauth.vk.com/authorize?client_id=2473476&scope=groups,offline,photos,audio,wall,video,docs,places,secure,storage,pages,friends&redirect_uri=blank.html&response_type=token
 
@@ -24,3 +27,9 @@ https://oauth.vk.com/authorize?client_id=2473476&scope=groups,offline,photos,aud
 Причем качать файл можно только с IP которого обращались к API.
 
 Вместо audio.get можно использовать любой метод с этой страницы -> http://vk.com/pages?oid=-1&p=%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%BE%D0%B2_API
+
+Например что-бы получить список своей музыки надо сделать ::
+
+    print vk.get('audio.get')
+
+Пример https://github.com/s-y/get-free-vkontakte-mp3/blob/master/script.py
