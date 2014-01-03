@@ -13,18 +13,17 @@ num_worker_threads = 10
 gid='30559784' # Здесь номер группы, но можно id пользователя
 save_to = '/tmp/' # Папка где храним mp3
 token=''
-i = 0
 
 vk = vkontakte.API(token=token)
 source = vk.get('audio.get', gid=gid)
 
-def save(song, save_to=save_to, i=i):
+def save(song, save_to=save_to):
     name = '%s - %s' % (song['artist'], song['title'])
     save_to += name
-    print '#'*10 + ' Start download of ' + name
+    print '#'*10 + ' Start download of ' + name + str(i)
     start = datetime.datetime.now()
     urllib.urlretrieve(song['url'], save_to)
-    print '#'*10 + ' Succesful download  of ' + name + (datetime.datetime.now() - stat).__str__()
+    print '#'*10 + ' Succesful download  of ' + name + (datetime.datetime.now() - start).__str__()
 
 def worker():
     while True:
