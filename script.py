@@ -19,7 +19,7 @@ source = vk.get('audio.get', gid=gid)
 
 def save(song, save_to=save_to):
     name = '%s - %s' % (song['artist'], song['title'])
-    save_to += name
+    save_to += name + '.mp3'
     save_to = save_to.replace('/', '__slash__')
     print '#'*10 + ' Start download of ' + name + str(i)
     start = datetime.datetime.now()
