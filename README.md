@@ -18,9 +18,9 @@ https://oauth.vk.com/authorize?client_id=2473476&scope=groups,offline,photos,aud
 
 Что с ним делать ? ::
 
-    In [1]: import vkontakte
-    In [2]: vk = vkontakte.API(token='__Ваш токен__')
-    In [3]: print vk.get('audio.get', gid=30559784)[2]
+    import vkontakte
+    vk = vkontakte.API(token='__Ваш токен__')
+    print vk.get('audio.get', gid=30559784)[2]
     {u'album': u'36662883', u'artist': u'Vision Anomaly', u'url': u'http://cs521605.vk.me/u21879215/audios/45dae3064020.mp3?extra=69PZLlPd0wRRFmEZexMewgvGifH-JkxR1FHed0i_QRZf97WrHOOjHpuieqAxohJRuIpndhByzF4ae1WWsUrZIb1ghhKS7KmX', u'title': u'Percepcion Emulada', u'genre': 18, u'duration': 247, u'aid': 206202661, u'owner_id': -30559784}
     In [4]: 
 Собственно что нам интересно это url. 
